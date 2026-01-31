@@ -1,72 +1,141 @@
-@charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Big+Shoulders:opsz,wght@10..72,100..900&family=Boldonse&family=Bungee&family=Cal+Sans&family=Cossette+Titre:wght@400;700&family=Jersey+15&family=Jost:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+VN:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Condensed+One&family=Stack+Sans+Text:wght@200..700&family=Story+Script&family=Tagesschrift&family=Yellowtail&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Big+Shoulders:opsz,wght@10..72,100..900&family=Boldonse&family=Bungee&family=Cal+Sans&family=Cossette+Titre:wght@400;700&family=Jersey+15&family=Jost:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+VN:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Condensed+One&family=Stack+Sans+Text:wght@200..700&family=Story+Script&family=Tagesschrift&family=Yellowtail&display=swap');
-:root{
-  --backgrounds: #2f353e;
+:root {
+  --backgrounds: #21252b; /* Um tom mais escuro e profissional */
+  --card-bg: #2f353e;
   --titles: #ffffff;
-  --button: #1b1bb4;
-  --buttonhover: #6060ea;
-  --fontTitle: "Bungee", "Arial", "Helvética", "sans-serif";
-  --fontparagraphs: "Special Gothic Condensed One", "Arial", "Helvética", "sans-serif";
-  --sizeTitle: 3em;
+  --button: #3d3dbd;
+  --buttonhover: #5050f5;
+  --accent: #00d2ff; /* Cor de destaque para detalhes */
+  --fontTitle: "Bungee", sans-serif;
+  --fontparagraphs: "Outfit", sans-serif; /* Troquei para uma mais legível no corpo */
+  --sizeTitle: 3.5rem;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-body{
+
+body {
   background-color: var(--backgrounds);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-.titlesContainer{
+
+/* Header mais elegante */
+.titlesContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 20px;
-  margin-right: 20px;
+  padding: 2rem 5%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
-.titlesContainer > h1{
+
+.titlesContainer > h1 {
   font-family: var(--fontTitle);
   font-size: var(--sizeTitle);
   color: var(--titles);
+  margin: 0;
+  text-shadow: 3px 3px 0px var(--button); /* Efeito de profundidade na Bungee */
+  letter-spacing: 2px;
 }
-.titlesContainer > button{
-  background-color: var(--button);
-  color: var(--titles);
-  font-family: var(--fontparagraphs);
-  font-size: 1em;
-  border: none;
-  border-radius: 10px;
-  padding: 30px; 
-  cursor: pointer;
-}
-.titlesContainer > button:hover{
-  transition: 0.5s ease-out;
-  background-color: var(--buttonhover);
-}
-.containerAddWish{
+
+/* Container de Input - Agora centralizado e moderno */
+.containerAddWish {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-top: 10%;
-  gap: 20px;
+  margin-top: 5rem;
+  gap: 15px;
+  animation: fadeIn 0.8s ease;
 }
-input[type="text"]{
-  padding: 25px;
-  border-radius: 10px;
-}
-.containerAddWish > button{
-  background-color: var(--button);
-  color: var(--titles);
+
+label {
   font-family: var(--fontparagraphs);
-  font-size: 1em;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.9rem;
+}
+
+/* Input Estilizado */
+input[type="text"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 18px 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  color: white;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: var(--buttonhover);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px rgba(96, 96, 234, 0.2);
+}
+
+/* Botão com Vida */
+.containerAddWish > button {
+  background: var(--button);
+  color: white;
+  font-family: var(--fontTitle); /* Bungee fica legal em botões curtos */
+  font-size: 0.9rem;
   border: none;
-  border-radius: 10px;
-  padding: 30px; 
+  border-radius: 12px;
+  padding: 15px 40px;
   cursor: pointer;
+  text-transform: uppercase;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
-.containerAddWish > button:hover{
-  transition: 0.5s ease-out;
+
+.containerAddWish > button:hover {
   background-color: var(--buttonhover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(96, 96, 234, 0.4);
 }
-label{
-  font-family: var(--fontparagraphs);
+
+.containerAddWish > button:active {
+  transform: translateY(1px);
+}
+
+/* Lista de Itens (Cards) */
+.ElementsWishList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 40px 5%;
+}
+
+.box {
+  background: var(--card-bg);
   color: var(--titles);
-  font-size: 1.2em;
+  font-family: var(--fontparagraphs);
+  padding: 20px;
+  border-radius: 15px;
+  border-left: 5px solid var(--button); /* Detalhe lateral */
+  transition: var(--transition);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box:hover {
+  transform: scale(1.02);
+  background: #363d47;
+}
+
+/* Animação simples */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media(max-width: 660px){
+  .titlesContainer { flex-direction: column; text-align: center; gap: 20px; }
+  .titlesContainer > h1 { font-size: 2.2rem; }
 }
