@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Big+Shoulders:opsz,wght@10..72,100..900&family=Boldonse&family=Bungee&family=Cal+Sans&family=Cossette+Titre:wght@400;700&family=Jersey+15&family=Jost:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+VN:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Condensed+One&family=Stack+Sans+Text:wght@200..700&family=Story+Script&family=Tagesschrift&family=Yellowtail&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Big+Shoulders:opsz,wght@10..72,100..900&family=Boldonse&family=Bungee&family=Cal+Sans&family=Cossette+Titre:wght@400;700&family=Jersey+15&family=Jost:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+VN:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Condensed+One&family=Stack+Sans+Text:wght@200..700&family=Story+Script&family=Tagesschrift&family=Yellowtail&display=swap');
 :root {
-  --backgrounds: #21252b; /* Um tom mais escuro e profissional */
+  --backgrounds: #21252b; 
   --card-bg: #2f353e;
   --titles: #ffffff;
   --button: #3d3dbd;
   --buttonhover: #5050f5;
-  --accent: #00d2ff; /* Cor de destaque para detalhes */
+  --accent: #00d2ff; 
   --fontTitle: "Bungee", sans-serif;
-  --fontparagraphs: "Outfit", sans-serif; /* Troquei para uma mais legível no corpo */
+  --fontparagraphs: "Outfit", sans-serif; 
   --sizeTitle: 3.5rem;
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -21,7 +21,6 @@ body {
   flex-direction: column;
 }
 
-/* Header mais elegante */
 .titlesContainer {
   display: flex;
   justify-content: space-between;
@@ -35,11 +34,10 @@ body {
   font-size: var(--sizeTitle);
   color: var(--titles);
   margin: 0;
-  text-shadow: 3px 3px 0px var(--button); /* Efeito de profundidade na Bungee */
+  text-shadow: 3px 3px 0px var(--button); 
   letter-spacing: 2px;
 }
 
-/* Container de Input - Agora centralizado e moderno */
 .containerAddWish {
   display: flex;
   flex-direction: column;
@@ -57,7 +55,6 @@ label {
   font-size: 0.9rem;
 }
 
-/* Input Estilizado */
 input[type="text"] {
   width: 100%;
   max-width: 400px;
@@ -77,11 +74,10 @@ input[type="text"]:focus {
   box-shadow: 0 0 20px rgba(96, 96, 234, 0.2);
 }
 
-/* Botão com Vida */
 .containerAddWish > button {
   background: var(--button);
   color: white;
-  font-family: var(--fontTitle); /* Bungee fica legal em botões curtos */
+  font-family: var(--fontTitle); 
   font-size: 0.9rem;
   border: none;
   border-radius: 12px;
@@ -102,7 +98,6 @@ input[type="text"]:focus {
   transform: translateY(1px);
 }
 
-/* Lista de Itens (Cards) */
 .ElementsWishList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -116,7 +111,7 @@ input[type="text"]:focus {
   font-family: var(--fontparagraphs);
   padding: 20px;
   border-radius: 15px;
-  border-left: 5px solid var(--button); /* Detalhe lateral */
+  border-left: 5px solid var(--button); 
   transition: var(--transition);
   display: flex;
   justify-content: space-between;
@@ -128,13 +123,11 @@ input[type="text"]:focus {
   background: #363d47;
 }
 
-/* Animação simples */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsividade */
 @media(max-width: 660px){
   .titlesContainer { flex-direction: column; text-align: center; gap: 20px; }
   .titlesContainer > h1 { font-size: 2.2rem; }

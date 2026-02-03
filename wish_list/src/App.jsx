@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './App.css'
-import e from 'express';
 
 function App(){
   const [task, setTask] = useState("");
@@ -13,7 +12,7 @@ function App(){
       </div>
       <div className="containerAddWish">
         <label htmlFor="idWishList">Type:</label>
-        <input type="text" placeholder='Add Item' value={task} onChange={e => setTask(e.target.value)}/>
+        <input type="text" placeholder='Add Item'/>
         <button onClick={addTask}>ADD</button>
         <div className='ElementsWishList'>
           <div className='box'>ccccc</div>
