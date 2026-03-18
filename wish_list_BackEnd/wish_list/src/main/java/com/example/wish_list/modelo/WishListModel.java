@@ -3,7 +3,7 @@ package com.example.wish_list.modelo;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
+// Creating the table in database MySQL
 @Entity
 @Table(name = "produtos")
 @Getter

@@ -25,7 +25,7 @@ public class ProdutoServico {
 
     // Method para cadastrar produtos
     // Como ele não sabe o retorno o méthod será cadastrar.
-    public ResponseEntity<?> cadastrar(WishListModel PM){
+    public ResponseEntity<?> cadastrar_alterar(WishListModel PM, String action){
         if(PM.getNome().equals("")){
             RM.setMensagem("O nome do produto é obrigatório");
             return new ResponseEntity<RespostaModelo>(RM, (HttpStatusCode) HttpStatus.BAD_REQUEST); // Send the message to front_end
@@ -33,7 +33,22 @@ public class ProdutoServico {
             RM.setMensagem("O nome da marca é obrigatório.");
             return new ResponseEntity<RespostaModelo>(RM, (HttpStatusCode) HttpStatus.BAD_REQUEST); // Send the message to front_end
         } else {
-            return new ResponseEntity<WishListModel>(PR.save(PM), HttpStatus.CREATED);
+            if(action.equals("cadastrar")){
+                return new ResponseEntity<WishListModel>(PR.save(PM), HttpStatus.CREATED);
+            } else {
+                return new ResponseEntity<WishListModel>(PR.save(PM), HttpStatus.OK);
+            }
         }
+    }
+
+    // Method to remove products
+    public ResponseEntity<WishListModel> remover(long codigo){
+        if(!PR.existsById(codigo)){
+            return new ResponseEntity<WishListModel>(RM, HttpStatus.NOT_FOUND);
+        }
+
+        PR.deleteById(codigo);
+        RM.setMensagem("O produto foi removido com sucesso.");
+        return new ResponseEntity<WishListModel>(RM, HttpStatus.OK);
     }
 }
