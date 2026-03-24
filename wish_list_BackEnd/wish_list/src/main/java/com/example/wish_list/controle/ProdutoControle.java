@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 // Cada método tem um um tipo de rota.
 @RestController
+@CrossOrigin(origins = "http://localhost:5173/")
 public class ProdutoControle {
 
     @Autowired
