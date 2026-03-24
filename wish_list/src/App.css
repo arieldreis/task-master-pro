@@ -1,134 +1,102 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Big+Shoulders:opsz,wght@10..72,100..900&family=Boldonse&family=Bungee&family=Cal+Sans&family=Cossette+Titre:wght@400;700&family=Jersey+15&family=Jost:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+VN:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Condensed+One&family=Stack+Sans+Text:wght@200..700&family=Story+Script&family=Tagesschrift&family=Yellowtail&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Big+Shoulders:opsz,wght@10..72,100..900&family=Boldonse&family=Bungee&family=Cal+Sans&family=Cossette+Titre:wght@400;700&family=Jersey+15&family=Jost:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+VN:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Condensed+One&family=Stack+Sans+Text:wght@200..700&family=Story+Script&family=Tagesschrift&family=Yellowtail&display=swap');
-:root {
-  --backgrounds: #21252b; 
-  --card-bg: #2f353e;
-  --titles: #ffffff;
-  --button: #3d3dbd;
-  --buttonhover: #5050f5;
-  --accent: #00d2ff; 
-  --fontTitle: "Bungee", sans-serif;
-  --fontparagraphs: "Outfit", sans-serif; 
-  --sizeTitle: 3.5rem;
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Big Shoulders', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  background-color: var(--backgrounds);
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.titlesContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 5%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.titlesContainer > h1 {
-  font-family: var(--fontTitle);
-  font-size: var(--sizeTitle);
-  color: var(--titles);
-  margin: 0;
-  text-shadow: 3px 3px 0px var(--button); 
-  letter-spacing: 2px;
-}
-
-.containerAddWish {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 5rem;
-  gap: 15px;
-  animation: fadeIn 0.8s ease;
-}
-
-label {
-  font-family: var(--fontparagraphs);
-  color: rgba(255, 255, 255, 0.7);
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 0.9rem;
-}
-
-input[type="text"] {
-  width: 100%;
-  max-width: 400px;
-  padding: 18px 25px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  color: white;
-  font-size: 1.1rem;
-  transition: var(--transition);
-  outline: none;
-}
-
-input[type="text"]:focus {
-  border-color: var(--buttonhover);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 20px rgba(96, 96, 234, 0.2);
-}
-
-.containerAddWish > button {
-  background: var(--button);
-  color: white;
-  font-family: var(--fontTitle); 
-  font-size: 0.9rem;
-  border: none;
-  border-radius: 12px;
-  padding: 15px 40px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.containerAddWish > button:hover {
-  background-color: var(--buttonhover);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(96, 96, 234, 0.4);
-}
-
-.containerAddWish > button:active {
-  transform: translateY(1px);
-}
-
-.ElementsWishList {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 40px 5%;
-}
-
-.box {
-  background: var(--card-bg);
-  color: var(--titles);
-  font-family: var(--fontparagraphs);
+  background-color: #f0f2f5;
   padding: 20px;
+}
+
+.form-container {
+  background-color: #ffffff;
+  padding: 40px;
   border-radius: 15px;
-  border-left: 5px solid var(--button); 
-  transition: var(--transition);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  width: 100%;
+  max-width: 450px;
 }
 
-.box:hover {
-  transform: scale(1.02);
-  background: #363d47;
+h2 {
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+p {
+  color: #666;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
 }
 
-@media(max-width: 660px){
-  .titlesContainer { flex-direction: column; text-align: center; gap: 20px; }
-  .titlesContainer > h1 { font-size: 2.2rem; }
+.input-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  transition: 0.3s;
+  background: transparent;
+}
+
+/* Label Flutuante */
+.input-group label {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  color: #999;
+  pointer-events: none;
+  transition: 0.3s;
+  background-color: white;
+  padding: 0 5px;
+}
+
+/* Transição do Label e Borda ao Focar */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:not(:placeholder-shown) ~ label {
+  top: -10px;
+  font-size: 0.8rem;
+  color: #007bff;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
