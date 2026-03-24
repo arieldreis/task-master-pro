@@ -1,5 +1,6 @@
 package com.example.wish_list.controle;
 
+import com.example.wish_list.modelo.RespostaModelo;
 import com.example.wish_list.modelo.WishListModel;
 import com.example.wish_list.servico.ProdutoServico;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ public class ProdutoControle {
     private ProdutoServico PS;
 
     @DeleteMapping("/remover/{codigo}")
-    public ResponseEntity<WishListModel> remover(@PathVariable long codigo){
+    public ResponseEntity<RespostaModelo> remover(@PathVariable long codigo){
         return PS.remover(codigo);
     }
 
