@@ -42,13 +42,13 @@ public class ProdutoServico {
     }
 
     // Method to remove products
-    public ResponseEntity<WishListModel> remover(long codigo){
+    public ResponseEntity<RespostaModelo> remover(long codigo){
         if(!PR.existsById(codigo)){
-            return new ResponseEntity<WishListModel>(RM, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<RespostaModelo>(RM, HttpStatus.NOT_FOUND);
         }
 
         PR.deleteById(codigo);
         RM.setMensagem("O produto foi removido com sucesso.");
-        return new ResponseEntity<WishListModel>(RM, HttpStatus.OK);
+        return new ResponseEntity<RespostaModelo>(RM, HttpStatus.OK);
     }
 }
