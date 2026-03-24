@@ -4,30 +4,32 @@ import './App.css';
 const Formulario = () => {
   return (
     <>
-    <div>
-      <div className="form-container">
-        <form>
-            <h2>Entre em Contato</h2>
-            <p>Preencha os campos abaixo para nos enviar uma mensagem.</p>
-            
+    <div className="form-container">
+        <h2>Cadastro de Inventário</h2>
+        
+        <form action="#" method="POST">
             <div className="input-group">
-                <input type="text" id="nome" name="nome" placeholder=" " required />
-                <label htmlFor="nome">Nome Completo</label>
+                <label htmlFor="id_produto">ID (Chave Primária)</label>
+                <input type="number" id="id_produto" name="id_produto" placeholder="Ex: 101" required />
             </div>
 
             <div className="input-group">
-                <input type="email" id="email" name="email" placeholder=" " required />
-                <label htmlFor="email">E-mail</label>
+                <label htmlFor="marca">Marca do Produto</label>
+                <input type="text" id="marca" name="marca" placeholder="Ex: Samsung" required />
             </div>
 
             <div className="input-group">
-                <textarea id="mensagem" name="mensagem" rows="5" placeholder=" " required></textarea>
-                <label htmlFor="mensagem">Mensagem</label>
+                <label htmlFor="nome">Nome do Produto</label>
+                <input type="text" id="nome" name="nome" placeholder="Ex: Monitor LED 24'" required />
             </div>
 
-            <button type="submit">Enviar Mensagem</button>
+            <div className="button-grid">
+                <button type="submit" className="btn btn-save">Cadastrar</button>
+                <button type="submit" className="btn btn-edit">Alterar</button>
+                <button type="submit" className="btn btn-delete">Remover</button>
+                <button type="reset" className="btn btn-cancel">Cancelar</button>
+            </div>
         </form>
-    </div>
     </div>
     </>
   )
