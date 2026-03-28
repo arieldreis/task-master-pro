@@ -2,5 +2,11 @@ create database spring_react
 default character set utf8
 default collate utf8_general_ci;
 
-create table (
-)default charset = utf8;
+use spring_react;
+
+select * from produtos;
+
+alter table produtos
+modify column nome varchar(255) after codigo;
+
+describe produtos;

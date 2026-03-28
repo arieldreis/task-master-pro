@@ -23,7 +23,7 @@ const Tabela = () => {
 
   return (
     <>
-      <div class="table-wrapper">
+      <div className="table-wrapper">
         <table>
           <thead>
             <tr>
