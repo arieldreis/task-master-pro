@@ -1,6 +1,6 @@
 import "./App.css";
 
-const Formulario = ({botao, eventoTeclado, cadastrar}) => {
+const Formulario = ({botao, eventoTeclado, cadastrar, objProduto}) => {
   return (
     <>
       <div className="form-container">
@@ -27,6 +27,7 @@ const Formulario = ({botao, eventoTeclado, cadastrar}) => {
               placeholder="Ex: Samsung"
               required
               onChange={eventoTeclado}
+              value={objProduto}
             />
           </div>
 
@@ -38,6 +39,7 @@ const Formulario = ({botao, eventoTeclado, cadastrar}) => {
               placeholder="Ex: Monitor LED 24'"
               required
               onChange={eventoTeclado}
+              value={objProduto}
             />
           </div>
 

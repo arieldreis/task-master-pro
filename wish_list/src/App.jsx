@@ -36,8 +36,9 @@ function App(){
     .then(retorno_convertido => {
       if(retorno_convertido.mensagem !== undefined){
         alert(retorno_convertido.mensagem)
-      }else{
-        alert("Produto Cadastrado com sucesso.")
+      } else {
+        alert("Produto Cadastrado com sucesso.");
+        limparFormulario();
       }
     })
     .catch(error => {
@@ -45,6 +46,13 @@ function App(){
       alert("Erro interno: " + error)
     })
   };
+
+  // Limpar o formulário
+  const limparFormulario = () => {
+    setObjProduto(produto);
+  };
+
+  
   return (
     <>
       <BrowserRouter>
@@ -55,6 +63,7 @@ function App(){
             botao={btnCadastrar} 
             eventoTeclado={ao_digitar}
             cadastrar={cadastrar}
+            obj={objProduto}
             /> 
             }
             />
