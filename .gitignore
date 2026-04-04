@@ -1,0 +1,88 @@
+# React Vite
+# Logs de erro (npm, yarn, pnpm)
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependências (nunca devem ser enviadas, pois são instaladas via npm install)
+node_modules
+dist
+dist-ssr
+*.local
+
+# Pasta de build (gerada pelo comando 'npm run build')
+dist
+
+# Variáveis de ambiente (contém chaves secretas e tokens)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Arquivos de editores e SO
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+# Spring Boot
+### JetBrains IDE (IntelliJ IDEA) ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+gen/
+
+### Eclipse IDE ###
+.metadata/
+bin/
+tmp/
+.classpath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+### Visual Studio Code ###
+.vscode/
+
+### Build Tools (Maven) ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.nextSnapshot
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+### Build Tools (Gradle) ###
+build/
+.gradle/
+/out/
+!gradle/wrapper/gradle-wrapper.jar
+
+### Log Files ###
+*.log
+logs/
+
+### OS specific files ###
+.DS_Store
+Thumbs.db
+
+### Application secrets (OPCIONAL - Segurança) ###
+# Nunca suba arquivos com senhas reais
+# application-local.properties
+# .env
